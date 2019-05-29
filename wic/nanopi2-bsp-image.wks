@@ -1,0 +1,8 @@
+#SD Card layout - copied from existing layout in https://github.com/friendlyarm/sd-fuse_s5p4418/blob/master/prebuilt/partmap_sd.txt
+# https://github.com/friendlyarm/sd-fuse_s5p4418/blob/master/fusing.sh
+part spl --source rawcopy --sourceparams="file=bl1-mmcboot.bin" --ondisk mmcblk0 --no-table --size=64k
+part spl --source rawcopy --sourceparams="file=loader-mmc.img" --ondisk mmcblk0 --no-table --size=192k
+part spl --source rawcopy --sourceparams="file=bl_mon.img" --ondisk mmcblk0 --no-table  --size=1664k
+part spl --source rawcopy --sourceparams="file=bootloader.img" --ondisk mmcblk0 --no-table
+part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=ext2 --label nanopi2 --active --align 4096 --size 64M
+part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label platform --align 4096

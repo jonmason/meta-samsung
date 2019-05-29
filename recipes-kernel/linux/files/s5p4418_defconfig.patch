@@ -1,0 +1,22 @@
+diff --git a/arch/arm/configs/nanopi2_linux_defconfig b/arch/arm/configs/nanopi2_linux_defconfig
+index c3562c494249..4eac762822af 100644
+--- a/arch/arm/configs/nanopi2_linux_defconfig
++++ b/arch/arm/configs/nanopi2_linux_defconfig
+@@ -61,7 +61,7 @@ CONFIG_ZSMALLOC=m
+ CONFIG_PGTABLE_MAPPING=y
+ CONFIG_FORCE_MAX_ZONEORDER=13
+ CONFIG_SECCOMP=y
+-CONFIG_CMDLINE="console=ttyAMA0,115200n8 root=/dev/ram0 rw initrd=0x48000000,8M"
++CONFIG_CMDLINE="console=ttyAMA0,115200n8 root=/dev/mmcblk0p2 rootfstype=ext4 rootwait init=/sbin/init loglevel=7 printk.time=1 consoleblank=0 lcd=S430,180dpi bootdev=2"
+ CONFIG_CPU_FREQ=y
+ CONFIG_CPU_FREQ_STAT_DETAILS=y
+ CONFIG_CPU_FREQ_DEFAULT_GOV_INTERACTIVE=y
+@@ -277,7 +277,7 @@ CONFIG_ATH6KL=m
+ CONFIG_ATH6KL_USB=m
+ CONFIG_AR5523=m
+ CONFIG_BROADCOM_WIFI=y
+-CONFIG_BCM4343=y
++CONFIG_BCM4343=n
+ CONFIG_BCMDHD_FW_PATH="/lib/firmware/ap6212/fw_bcmdhd.bin"
+ CONFIG_BCMDHD_NVRAM_PATH="/lib/firmware/ap6212/nvram.txt"
+ CONFIG_BRCMFMAC=m

@@ -1,0 +1,13 @@
+diff --git a/arch/arm64/configs/nanopi3_linux_defconfig b/arch/arm64/configs/nanopi3_linux_defconfig
+index 840179fa2e55..eadcef291bd2 100644
+--- a/arch/arm64/configs/nanopi3_linux_defconfig
++++ b/arch/arm64/configs/nanopi3_linux_defconfig
+@@ -62,7 +62,7 @@ CONFIG_PGTABLE_MAPPING=y
+ CONFIG_SECCOMP=y
+ CONFIG_FORCE_MAX_ZONEORDER=13
+ CONFIG_ARMV8_DEPRECATED=y
+-CONFIG_CMDLINE="console=ttySAC0,115200n8 root=/dev/ram0 rw initrd=0x48000000,8M"
++CONFIG_CMDLINE="console=ttySAC0,115200n8 root=/dev/mmcblk0p2 rootfstype=ext4 rootwait init=/sbin/init loglevel=7 printk.time=1 consoleblank=0 lcd=HDMI720P60 bootdev=2"
+ # CONFIG_EFI is not set
+ CONFIG_COMPAT=y
+ CONFIG_PM_AUTOSLEEP=y
